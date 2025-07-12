@@ -1,0 +1,31 @@
+{% comment %} Este es mi archivo base html donde esta la cabeza y el cuerpo, que se extiende 
+a todos los archivos html de la aplicacion {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    {% comment %} Este es el bloque del titulo de cada pagina {% endcomment %}
+    {% block titulo %}
+    
+    {% endblock titulo %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bttn.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hint.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="body-expanded">
+    {% comment %} Este es el contenido de cada pagina {% endcomment %}
+    {% block contenido %}
+        
+    {% endblock contenido %}
+
+    <script defer src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script defer src="{% static 'js/popper.min.js' %}"></script>
+    <script defer src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<nav id="menu-vertical-container">
+    <div class="btn-nav">
+        <button id="btn-collapse" class="bttn-bordered bttn-md"><i class="ion-navicon"></i></button>
+    </div>
+    <span id="menu-nav" class="menu-nav-collapsed">
+        <ul class="link-nav">
+            <li>
+                <a href="{% url 'facial' %}" class="bttn-stretch bttn-sm">
+                    <i class="ion-android-contact"></i>
+                    Gestos facial
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'manoder' %}" class="bttn-stretch bttn-sm">
+                    <i class="ion-android-hand"></i>
+                    Gestos de mano derecha
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'manoizq' %}" class="bttn-stretch bttn-sm">
+                    <i class="ion-android-hand"></i>
+                    Gestos de mano izquierda
+                </a>
+            </li>
+            
+        </ul>
+    </span>
+</nav>

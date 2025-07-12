@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+{{titulo}}
+{% endblock titulo %}
+
+{% block contenido %}
+{% include 'sidebar.html' %}
+<div id="main-container">
+    {% include 'menu.html' %}
+    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+        
+        <ul class="link-nav">
+            <li>
+                <a href="{% url "ver-manual-pdf" %}" target="_blank" class="bttn-simple bttn-primary bttn-sm">
+                    <i class="ion-android-contact"></i>
+                    Visualizar Manual de Usuario
+                </a>
+            </li>    
+            <li>
+                <a href="{% url "manual-pdf" %}" class="bttn-simple bttn-primary bttn-sm">
+                    <i class="ion-android-contact"></i>
+                    Descargar Manual de Usuario
+                </a>
+            </li>    
+        </ul>
+
+        <div id="loading" style="display: none;">
+            <h2>CARGANDO...</h2>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.bttn-primary').click(function(){
+        $('#loading').show();
+        setTimeout(function(){
+            $('#loading').hide();
+        }, 2000); // Esto ocultará el mensaje después de 2 segundos
+    });
+});
+</script>
+
+       <img src="{% static 'img/facial.png' %}" width="900" alt="facial">
+
+    </div>
+</div>
+{% endblock contenido %}

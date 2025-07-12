@@ -1,0 +1,8 @@
+
+comandos para que funcione el programa en la terminal de visual Studio Code:
+        cd .\django_backend_api\ 
+	.\venv\Scripts\activate
+	deactivate
+	python manage.py runserver
+	
+

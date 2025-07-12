@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+{{titulo}}
+{% endblock titulo %}
+
+{% block contenido %}
+    {% include 'sidebar.html' %}
+    <div id="main-container">
+        {% include 'menu.html' %}
+
+        <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+            <h1>{{contenido}}</h1>
+            <ul class="link-nav">
+                <li>
+                    <a href="{% url 'exemanoder' %}" class="bttn-simple bttn-primary bttn-sm">
+                        <i class="ion-android-hand"></i>
+                        Comenzar
+                    </a>
+                </li>
+            </ul>
+            <div id="loading" style="display: none;">
+                <h2>CARGANDO...</h2>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.bttn-primary').click(function(){
+            $('#loading').show();
+            setTimeout(function(){
+                $('#loading').hide();
+            }, 10000); // Esto ocultará el mensaje después de 10 segundos
+        });
+    });
+    </script>
+
+            <img src="{% static 'img/mano-derecha.png' %}" width="400" alt="mano derecha">
+    
+        </div>
+    </div>
+{% endblock contenido %}

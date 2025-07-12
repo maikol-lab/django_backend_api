@@ -1,0 +1,84 @@
+{% load static %}
+<div id="sidebar" class="menu-expanded">
+    <!-- HEADER -->
+    <div id="header">
+        <div id="title">
+            <span>FACIAL MOVEMENT</span>
+        </div>
+        <div id="menu-btn">
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+            <div class="btn-hamburger"></div>
+        </div>
+    </div>
+                            
+    <div id="profile">
+        <div id="photo">
+            <img src="{% static 'img/Logo-UJAP2.png' %}" alt="logo UJAP">
+        </div>
+    </div>
+
+    <div id="menu-items">
+        <div class="item">
+            <a href="{% url 'facial' %}">
+                <span id="item-icon-1" class="" aria-label="Gestor facial">
+                    <div class="icon">
+                        
+                        <img src="{% static 'img/icon-facial.ico' %}" alt="">
+                    </div>
+                </span>
+                <div id="item-title-1" class="title">
+                    <span>Gestor facial</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="item">
+            <a href="{% url 'manoder' %}">
+                <span id="item-icon-2" class="" aria-label="Gestor de mano derecha">
+                    <div class="icon">
+                        
+                        <img src="{% static 'img/mano-der.ico' %}" alt="">
+                    </div>
+                </span>
+                <div id="item-title-2" class="title">
+                    <span>Gestor de mano derecha</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="item">
+            <a href="{% url 'manoizq' %}">
+                <span id="item-icon-3" class="" aria-label="Gestor de mano izquierda">
+                    <div class="icon">
+                        
+                        <img src="{% static 'img/mano-izq.ico' %}" alt="">
+                    </div>
+                </span>
+                <div id="item-title-3" class="title">
+                    <span>Gestor de mano izquierda</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="separator"></div>
+        
+
+        <div class="item">
+            <a href="{% url 'inicio-pdf' %}">
+                <span id="item-icon-5" class="" aria-label="Manual de usuario">
+                    <div class="icon">
+                       
+                        <img src="{% static 'img/manual.ico' %}" alt="">
+                    </div>
+                </span>
+                <div id="item-title-5" class="title">
+                    <span>Manual de usuario</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="separator"></div>
+        
+     </div>
+</div>

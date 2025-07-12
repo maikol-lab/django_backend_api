@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+{{titulo}}
+{% endblock titulo %}
+                                                                            
+{% block contenido %}
+{% comment %} esta es la barra lateral del lado izquido que se contrae y se expande en el 
+boton de las 3 rayas mejor conocido como boton hamburguesa esto es lo que hace el "Sidebar" {% endcomment %}
+{% include 'sidebar.html' %}
+<div id="main-container">
+    {% comment %} incluyo el menu de todas las paginas que esta la parte superior, que tiene las
+    opciones de mano derecha e Izquierda {% endcomment %}
+    {% include 'menu.html' %}
+    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+        <h1>{{contenido}}</h1>
+        <ul class="link-nav">
+            <li>
+                <a href="{% url "exefacial" %}" class="bttn-simple bttn-primary bttn-sm">
+                    <i class="ion-android-contact"></i>
+                    Comenzar
+            </a>                                                        
+            </li>    
+        </ul>
+
+        <div id="loading" style="display: none;">
+            <h2>CARGANDO...</h2>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.bttn-primary').click(function(){
+        $('#loading').show();
+        setTimeout(function(){
+            $('#loading').hide();
+        }, 6000); // Esto ocultará el mensaje después de 6 segundos
+    });
+});
+</script>
+
+       <img src="{% static 'img/facial.png' %}" width="900" alt="facial">
+
+    </div>
+</div>
+{% endblock contenido %}
